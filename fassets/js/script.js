@@ -42,6 +42,9 @@ var createTaskEl = function(taskDataObj) {
   taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-value'>" + taskDataObj.type + "</span>";
   listItemEl.appendChild (taskInfoEl);
 
+  var taskActionsEl = createTaskActions(taskIdCounter);
+  listItemEl.appendChild(taskActionsEl);
+
   // add entire list item to the list.
   taskToDoEl.appendChild(listItemEl);
 
@@ -83,7 +86,7 @@ var createTaskActions = function(taskId) {
     statusOptionEl.textContent = statusChoices[i];
     statusOptionEl.setAttribute("value", statusChoices[i]);
 
-    // appened to the select element.
+    // appened to the selected element.
     statusSelectEl.appendChild(statusOptionEl);
   }
 
