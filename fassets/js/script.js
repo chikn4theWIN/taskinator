@@ -6,6 +6,14 @@ var taskFormHandler = function(event) {
   var taskNameInput = document.querySelector("input[name='task-name']").value;
   var taskTypeInput = document.querySelector("select[name='task-value']").value;
 
+  // check if the the input values are empty strings.
+  if (!taskNameInput || !taskTypeInput) {
+    alert("You need to fill of the task form idiot!");
+    return false;
+  }
+
+  formEl.reset();
+
   // package up the data as an object.
   var taskDataObj = {
     name: taskNameInput,
